@@ -16,7 +16,9 @@ class NotesApp extends StatelessWidget {
         brightness: Brightness.dark,
         fontFamily: "Poppins",
       ),
-      routes: {HomePage.id: (context) => HomePage()},
+      routes: {
+        HomePage.id: (context) => HomePage(),
+      },
       initialRoute: HomePage.id,
     );
   }
