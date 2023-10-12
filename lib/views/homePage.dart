@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/notesViewBodyWidget.dart';
 
-import '../widgets/addNoteBottomSheet.dart';
+import '../widgets/addNoteBottonSheet.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
