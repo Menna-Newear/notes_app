@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/customAppBarWidget.dart';
-import 'package:notes_app/widgets/noteCard.dart';
+import 'package:notes_app/widgets/noteCardListView.dart';
 
 class NotesViewBodyWidget extends StatelessWidget {
   const NotesViewBodyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return const Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
         children: [
@@ -15,7 +15,9 @@ class NotesViewBodyWidget extends StatelessWidget {
             height: 50,
           ),
           CustomAppBarWidget(),
-          NoteCard(),
+          Expanded(
+            child: NoteCardListView(),
+          )
         ],
       ),
     );
