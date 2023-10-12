@@ -6,8 +6,12 @@ class HomePage extends StatelessWidget {
   static String id = "Home Page";
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: NotesViewBodyWidget(),
+    return Scaffold(
+      body: const NotesViewBodyWidget(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
