@@ -35,7 +35,7 @@ class NoteCard extends StatelessWidget {
               subtitle: const Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0),
                 child: Text(
-                  "Build You Career with Tharwat Samy",
+                  "Build You Career with Menna Newear",
                   style: TextStyle(
                     color: Color(0xff916A38),
                     fontSize: 18,
