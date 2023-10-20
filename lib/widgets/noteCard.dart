@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/editNoteView.dart';
 
 class NoteCard extends StatelessWidget {
-  const NoteCard({super.key});
-
+  const NoteCard({super.key, required this.model});
+  final NoteModel model;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,24 +20,24 @@ class NoteCard extends StatelessWidget {
         ),
         margin: EdgeInsets.only(bottom: 8),
         decoration: BoxDecoration(
-            color: const Color(0xffFFCD7A),
+            color: Color(model.noteColor),
             borderRadius: BorderRadius.circular(16)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title: const Text(
-                "Flutter Tips",
-                style: TextStyle(
+              title: Text(
+                model.noteTitle,
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 24,
                 ),
               ),
-              subtitle: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0),
+              subtitle: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: Text(
-                  "Build You Career with Menna Newear",
-                  style: TextStyle(
+                  model.noteContent,
+                  style: const TextStyle(
                     color: Color(0xff916A38),
                     fontSize: 18,
                   ),
@@ -51,14 +52,14 @@ class NoteCard extends StatelessWidget {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(
+            Padding(
+              padding: const EdgeInsets.only(
                 right: 8.0,
                 bottom: 16,
               ),
               child: Text(
-                "12 Oct 2023",
-                style: TextStyle(
+                model.noteDate,
+                style: const TextStyle(
                   color: Color(0xff916A38),
                   fontSize: 16,
                 ),
