@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/editNoteView.dart';
 
@@ -10,7 +12,9 @@ class NoteCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const EditNoteView();
+          return EditNoteView(
+            notes: model,
+          );
         }));
       },
       child: Container(
@@ -18,7 +22,7 @@ class NoteCard extends StatelessWidget {
           left: 16,
           top: 24,
         ),
-        margin: EdgeInsets.only(bottom: 8),
+        margin: const EdgeInsets.only(bottom: 8),
         decoration: BoxDecoration(
             color: Color(model.noteColor),
             borderRadius: BorderRadius.circular(16)),
@@ -46,6 +50,7 @@ class NoteCard extends StatelessWidget {
               trailing: IconButton(
                 onPressed: () {
                   model.delete();
+                  BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                 },
                 icon: const Icon(
                   Icons.delete,
