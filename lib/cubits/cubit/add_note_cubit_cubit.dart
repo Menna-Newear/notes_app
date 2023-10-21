@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:bloc/bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:meta/meta.dart';
@@ -8,7 +10,9 @@ part 'add_note_cubit_state.dart';
 
 class AddNoteCubitCubit extends Cubit<AddNoteCubitState> {
   AddNoteCubitCubit() : super(AddNoteCubitInitial());
+  Color? color = const Color(0xffFBF8CC);
   addNote(NoteModel note) async {
+    note.noteColor = color!.value;
     emit(AddNoteLoading());
     try {
       var notesBox = Hive.box<NoteModel>(kNotesBox);
