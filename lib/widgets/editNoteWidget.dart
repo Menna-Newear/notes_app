@@ -4,6 +4,7 @@ import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:notes_app/cubits/cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/colorsListView.dart';
+import 'package:notes_app/widgets/colorsListViewInEditNote.dart';
 import 'package:notes_app/widgets/customAppBarWidget.dart';
 import 'package:notes_app/widgets/customTextField.dart';
 
@@ -53,6 +54,10 @@ class _EditNoteWidgetState extends State<EditNoteWidget> {
               },
               labelName: widget.notes.noteContent,
               maxLines: 5,
+            ),
+            Gutter(),
+            EditNoteColorList(
+              note: widget.notes,
             ),
           ],
         ),

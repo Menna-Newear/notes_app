@@ -42,7 +42,7 @@ class _addNoteFormState extends State<addNoteForm> {
             maxLines: 5,
           ),
           const Gutter(),
-          ColorListView(),
+          const ColorListView(),
           const Gutter(),
           BlocBuilder<AddNoteCubitCubit, AddNoteCubitState>(
             builder: (context, state) {
